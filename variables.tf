@@ -28,7 +28,11 @@ variable "attributes" {
   description = "Additional attributes (e.g. `1`)."
 }
 
-
+variable "tags" {
+  type        = map(string)
+  default     = {}
+  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
+}
 
 variable "managedby" {
   type        = string
@@ -44,7 +48,11 @@ variable "public_key" {
   sensitive   = true
 }
 
-
+variable "key_name" {
+  type        = string
+  default     = ""
+  description = "Name  (e.g. `it-admin` or `devops`)."
+}
 
 variable "enable_key_pair" {
   type        = bool
@@ -64,3 +72,8 @@ variable "private_key_algorithm" {
   description = "Name of the algorithm to use when generating the private key. Currently-supported values are `RSA` and `ED25519`"
 }
 
+variable "private_key_rsa_bits" {
+  type        = number
+  default     = 4096
+  description = "When algorithm is `RSA`, the size of the generated RSA key, in bits (default: `4096`)"
+}
