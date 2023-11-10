@@ -28,12 +28,6 @@ variable "attributes" {
   description = "Additional attributes (e.g. `1`)."
 }
 
-variable "tags" {
-  type        = map(string)
-  default     = {}
-  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
-}
-
 variable "managedby" {
   type        = string
   default     = ""
@@ -46,12 +40,6 @@ variable "public_key" {
   default     = ""
   description = "Name  (e.g. `ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ`)."
   sensitive   = true
-}
-
-variable "key_name" {
-  type        = string
-  default     = ""
-  description = "Name  (e.g. `it-admin` or `devops`)."
 }
 
 variable "enable_key_pair" {
@@ -70,10 +58,4 @@ variable "private_key_algorithm" {
   type        = string
   default     = "RSA"
   description = "Name of the algorithm to use when generating the private key. Currently-supported values are `RSA` and `ED25519`"
-}
-
-variable "private_key_rsa_bits" {
-  type        = number
-  default     = 4096
-  description = "When algorithm is `RSA`, the size of the generated RSA key, in bits (default: `4096`)"
 }
