@@ -6,8 +6,7 @@ provider "aws" {
 ##  Module      : private KEY PAIR
 ####----------------------------------------------------------------------------------
 module "private_keypair" {
-  source = "../../"
-
+  source                     = "../../"
   name                       = "private-key"
   environment                = "test"
   label_order                = ["name", "environment"]
